@@ -1,0 +1,40 @@
+variable "aws_region" {
+  type        = string
+  default     = "us-east-2"
+}
+variable "aws_access_key_id" {
+  type        = string
+  default     = ""
+}
+variable "aws_secret_access_key" {
+  type        = string
+  default     = ""
+}
+variable "Users" {
+ type = list(string)
+  default = ["Ashish"]
+}
+variable "AdminUsers" {
+ type = list(string)
+  default = ["Bill"]
+}
+variable "DevelopersUsers" {
+ type = list(string)
+  default = ["Steve","Zuck","Jeff"]
+}
+variable "DevOpsUsers" {
+ type = list(string)
+  default = ["Elon","Jack"]
+}
+variable "GroupNames" {
+  type        = list(string)
+  default     = ["Admins", "Developers", "DevOps"]
+}
+variable "s3-buckets" {
+  type = list(string)
+  default = [ "sai-bucket-1", "sai-bucket-2", "sai-bucket-3"] 
+}
+variable "mysubnets" {
+  type = list(string)
+  default = [ "mysubnet-1", "mysubnet-2", "mysubnet-3"] 
+}
