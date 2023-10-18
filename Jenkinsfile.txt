@@ -15,7 +15,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "###### "
+                            git "https://github.com/sai9997/model_automation.git"
                         }
                     }
                 }
