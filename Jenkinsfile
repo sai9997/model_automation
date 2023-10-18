@@ -15,7 +15,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/sai9997/model_automation.git"
+                            git branch: 'main', credentialsId: 'fdc1ee5a-31cd-4862-b734-47ba7699daa6', url: 'https://github.com/sai9997/model_automation.git'
                         }
                     }
                 }
