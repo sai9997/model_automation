@@ -4,3 +4,6 @@ variables.tf
 terraform.tfstate
 variables.tf
 .terraform/
+Jenkinsfile.txt
+s3_demo.tf
+terraform.tfstate.backup

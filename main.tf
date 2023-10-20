@@ -18,6 +18,11 @@ resource "aws_iam_group" "GroupNames" {
   count = length(var.GroupNames)
   name = var.GroupNames[count.index]
 }
+# resource "aws_subnet" "mysubnets" {
+#   vpc_id = vpc-09e26fd3d29fc79b1
+#   count = length(var.mysubnets)
+#   name = var.mysubnets[count.index]
+# }
 
 
 
