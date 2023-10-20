@@ -46,7 +46,7 @@ pipeline {
 
         stage('Apply') {
             steps {
-                sh "pwd;cd model_automation/ ; terraform apply -input=false tfplan"
+                sh "pwd;cd new_pipeline/ ; terraform apply -input=false tfplan"
             }
         }
     }
