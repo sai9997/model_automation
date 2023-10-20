@@ -13,7 +13,7 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("terraform")
+                        dir("new_pipeline")
                         {
                             git branch: 'main', credentialsId: 'GitUserNamePassword', url: 'https://github.com/sai9997/model_automation.git'
                         }
