@@ -1,3 +1,8 @@
+// step0: After jenkins configuration. Create a pipeline(name new_pipeline) and click pipeline
+// pipelink definition > pipeline script from SCM > Git > paste GitHub Repo http url   
+// > assign github credential > change branch name to main > save
+// 
+
 pipeline {
 
     parameters {
@@ -13,6 +18,9 @@ pipeline {
     stages {
         stage('checkout') {
 // step2: providing git barnch,credentails & repository url
+// tip:jenkins > Dashborad > pipeline > pipeline syntax > sample step > git
+// > paste github repo url > branch main > generate pipeline script
+// you will get below link
             steps {
                  script{
                         dir("new_pipeline")
