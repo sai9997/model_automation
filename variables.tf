@@ -10,19 +10,19 @@ variable "aws_region" {
 #}
 variable "Users" {
  type = list(string)
-  default = ["Ashish"]
+  default = ["Ashish2"]
 }
 variable "AdminUsers" {
  type = list(string)
-  default = ["Bill"]
+  default = ["Bill2"]
 }
 variable "DevelopersUsers" {
  type = list(string)
-  default = ["Steve","Zuck","Jeff"]
+  default = ["Steve2","Zuck2","Jeff2"]
 }
 variable "DevOpsUsers" {
  type = list(string)
-  default = ["Elon","Jack"]
+  default = ["Elon2","Jack2"]
 }
 variable "GroupNames" {
   type        = list(string)
