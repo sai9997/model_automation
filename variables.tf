@@ -28,10 +28,10 @@ variable "GroupNames" {
   type        = list(string)
   default     = ["Admins", "Developers", "DevOps"]
 }
-variable "s3-buckets" {
-  type = list(string)
-  default = [ "sai-bucket-1", "sai-bucket-2", "sai-bucket-3"] 
-}
+# variable "s3-buckets" {
+#   type = list(string)
+#   default = [ "sai-bucket-1", "sai-bucket-2", "sai-bucket-3"] 
+# }
 variable "mysubnets" {
   type = list(string)
   default = [ "mysubnet-1", "mysubnet-2", "mysubnet-3"] 
