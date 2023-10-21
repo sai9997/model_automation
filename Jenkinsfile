@@ -3,6 +3,7 @@ pipeline {
     parameters {
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
     } 
+// step1: Getting aws credentails from jenkins configuration
     environment {
         AWS_ACCESS_KEY_ID    = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
@@ -11,6 +12,7 @@ pipeline {
    agent  any
     stages {
         stage('checkout') {
+// step2: providing git barnch,credentails & repository url
             steps {
                  script{
                         dir("new_pipeline")
@@ -22,6 +24,7 @@ pipeline {
             }
 
         stage('Plan') {
+// step3: providing terraform commonds and saves paln info in tfplan file
             steps {
                 sh 'pwd;cd new_pipeline/ ; terraform init'
                 sh "pwd;cd new_pipeline/ ; terraform plan -out tfplan"
@@ -29,6 +32,7 @@ pipeline {
             }
         }
         stage('Approval') {
+// step4: providing approval with autoapproval option
            when {
                not {
                    equals expected: true, actual: params.autoApprove
@@ -36,6 +40,7 @@ pipeline {
            }
 
            steps {
+// step5: code to display the terraform plan from tfplan file
                script {
                     def plan = readFile 'new_pipeline/tfplan.txt'
                     input message: "Do you want to apply the plan?",
@@ -45,6 +50,7 @@ pipeline {
        }
 
         stage('Apply') {
+// step6: Terraform command to apply changes in aws
             steps {
                 sh "pwd;cd new_pipeline/ ; terraform apply -input=false tfplan"
             }
