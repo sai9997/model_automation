@@ -26,7 +26,7 @@ variable "DevOpsUsers" {
 }
 variable "GroupNames" {
   type        = list(string)
-  default     = ["Admins", "Developers", "DevOps"]
+  default     = ["Admins2", "Developers2", "DevOps2"]
 }
 # variable "s3-buckets" {
 #   type = list(string)
